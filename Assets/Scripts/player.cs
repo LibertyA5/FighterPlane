@@ -43,19 +43,18 @@ public class player : MonoBehaviour
         transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * Time.deltaTime * playerSpeed);
         //1,1,0 * 0.1 = 0.1,0.1,0 * 6 speed = 0.6, 0.6, 0 = where player ends up
 
-
-
         //Player leaves the screen horizontally with x value of transform , greater than or less than negative gets reversed 
-        if (transform.position.x > horizontalScreenLimit || transform.position.x <= -horizontalScreenLimit)
+        //Player leaves the screen horizontally
+        if(transform.position.x > horizontalScreenLimit || transform.position.x <= -horizontalScreenLimit)
         {
             transform.position = new Vector3(transform.position.x * -1, transform.position.y, 0);
         }
-
-        //Player leaves the screen vertically, with y value of transform 
-        if (transform.position.y > verticalScreenLimit || transform.position.y <= -verticalScreenLimit)
+        //Player leaves the screen vertically
+        if(transform.position.y > verticalScreenLimit || transform.position.y <= -verticalScreenLimit)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
         }
+    
     }
     
      void Shooting()

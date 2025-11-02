@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy2 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,6 +14,11 @@ public class Enemy : MonoBehaviour
         //neg 1 moves down 
         //if less than neg 6.5, destroy themselves 
         transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * 3f);
+        if (transform.position.y < -3.5f)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
+        }
+
         if (transform.position.y < -6.5f)
         {
             Destroy(this.gameObject);
