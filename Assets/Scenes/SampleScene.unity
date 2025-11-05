@@ -490,7 +490,6 @@ GameObject:
   - component: {fileID: 953756680}
   - component: {fileID: 953756679}
   - component: {fileID: 953756678}
-  - component: {fileID: 953756677}
   - component: {fileID: 953756676}
   m_Layer: 0
   m_Name: Player
@@ -512,19 +511,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::player
   bulletPrefab: {fileID: 428977281536425508, guid: 68c36c99feb826543878b5ff1768d0de, type: 3}
---- !u!114 &953756677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953756675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a128fef3ca02cc4fb025e899084716a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::player
-  bulletPrefab: {fileID: 0}
 --- !u!65 &953756678
 BoxCollider:
   m_ObjectHideFlags: 0
