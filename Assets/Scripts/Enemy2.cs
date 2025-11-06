@@ -12,7 +12,7 @@ public class Enemy2 : MonoBehaviour
     void Update()
     {
         //neg 1 moves down 
-        //if less than neg 6.5, destroy themselves 
+        //if less than neg 6.5, destroy themselves, changed the speed to 10f which makes them fall faster
         transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * 10f);
         if (transform.position.y < -6.5f)
         {
