@@ -13,15 +13,12 @@ public class Enemy2 : MonoBehaviour
     {
         //neg 1 moves down 
         //if less than neg 6.5, destroy themselves 
-        transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * 3f);
-        if (transform.position.y < -3.5f)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
-        }
-
+        transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * 10f);
         if (transform.position.y < -6.5f)
         {
             Destroy(this.gameObject);
         }
     }
+
+
 }

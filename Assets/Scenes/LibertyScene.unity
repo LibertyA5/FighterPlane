@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 953756676}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -511,6 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::player
   bulletPrefab: {fileID: 428977281536425508, guid: 68c36c99feb826543878b5ff1768d0de, type: 3}
+  explosionPrefab: {fileID: 3679228904311652738, guid: 82d305b195f80ac45aa8aa1447561bf3, type: 3}
 --- !u!65 &953756678
 BoxCollider:
   m_ObjectHideFlags: 0
