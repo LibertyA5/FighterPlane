@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
 
     //move up and destroy after a certain y value 
-    // float represents speed of bullets 
+    //float represents speed of bullets 
     //vector, time, speed multiped 
     void Update()
     {
