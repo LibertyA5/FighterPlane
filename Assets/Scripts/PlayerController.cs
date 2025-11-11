@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     //movement
     //shooting
 
+    public int lives;
     private float playerSpeed;
     private float horizontalInput;
     private float verticalInput;
@@ -16,15 +17,38 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject explosionPrefab;
 
+    private GameManager gameManager;
+
     // Start is called ONCE before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        lives = 3;
         playerSpeed = 6f;
+
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager.ChangeLivesText(lives);
+
         //This function is called at the start of the game
-    }  
+    }
 
     // Update is called once per frame THROUGHOUT THE GAME
-    
+
+    public void LoseALife()
+    {
+        //lives -- = lives - 1 or lives -= 1; (how to write losing 1 life in code)
+        lives--;
+        gameManager.ChangeLivesText(lives);
+
+
+        if(lives ==0)
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            
+        }
+    }
+
+
     void Update()
     {
         //This function is called every frame; 60 frames/second
