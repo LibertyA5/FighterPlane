@@ -820,23 +820,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba036ee48e5944ba7d0f7cafa0f5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  playerPrefab: {fileID: 4602029177386983689, guid: 2d0bd98e0561e2344b3b4d5506326909, type: 3}
   enemyOnePrefab: {fileID: 826472680687608151, guid: d1e0cab7b100e824393e9ed62605ba6a, type: 3}
   enemyTwoPrefab: {fileID: 826472680687608151, guid: b383f0b14e4cc1d44a72be1248a48d03, type: 3}
-  cloudPrefab: {fileID: 417480241881266437, guid: f8e1566bd09bba24e8550f3563d5924e, type: 3}
-  restartText: {fileID: 661654354}
-  gameOverText: {fileID: 900610763}
-  powerupPrefab: {fileID: 826472680687608151, guid: 5625a6ee366616f4095bbc3e34ad260d, type: 3}
-  audioPlayer: {fileID: 905566003}
-  powerUpSound: {fileID: 8300000, guid: a837aeba4c6e7ed43a1ebcc72cc0c976, type: 3}
-  powerDownSound: {fileID: 8300000, guid: 7f1f9787b1d738d40bece61d30af037e, type: 3}
-  livesText: {fileID: 1821612444}
-  scoreText: {fileID: 471525551}
-  powerupText: {fileID: 786649811}
-  score: 0
-  horizontalScreenSize: 0
-  verticalScreenSize: 0
-  cloudMove: 0
 --- !u!4 &794013888
 Transform:
   m_ObjectHideFlags: 0
