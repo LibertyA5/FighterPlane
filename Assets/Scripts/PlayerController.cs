@@ -1,6 +1,10 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 public class PlayerController : MonoBehaviour
 {
     //movement
@@ -8,6 +12,10 @@ public class PlayerController : MonoBehaviour
 
     public int lives;
     private float playerSpeed;
+    private int weaponType;
+
+private GameManager gameManager;
+   
     private float horizontalInput;
     private float verticalInput;
 
@@ -17,45 +25,119 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject explosionPrefab;
 
-    private GameManager gameManager;
+    
+
+    public GameObject thrusterPrefab;
+    public GameObject shieldPrefab;
+    public TextMeshProUGUI powerupText;
+    
 
     // Start is called ONCE before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
-        lives = 3;
-        playerSpeed = 6f;
-
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+      
+      //if you have a shield active, lose shield first, no life decrease 
+        lives = 3;
+        playerSpeed = 5.0f;
+        weaponType = 1; //default weapon 
+       
         gameManager.ChangeLivesText(lives);
 
         //This function is called at the start of the game
     }
 
     // Update is called once per frame THROUGHOUT THE GAME
-
-    public void LoseALife()
-    {
-        //lives -- = lives - 1 or lives -= 1; (how to write losing 1 life in code)
-        lives--;
-        gameManager.ChangeLivesText(lives);
-
-
-        if(lives ==0)
-        {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
-            
-        }
-    }
-
-
-    void Update()
+void Update()
     {
         //This function is called every frame; 60 frames/second
         //2 METHODS we are preforming, methods are actions, variables are attributes to actions 
         Movement();
         Shooting();
     }
+    
+    
+    
+    public void LoseALife()
+    {
+        //lives -- = lives - 1 or lives -= 1; (how to write losing 1 life in code)
+        lives--;
+
+        gameManager.ChangeLivesText(lives);
+        if(lives ==0)
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            
+    
+            gameManager.GameOver();
+            //can be called since its public 
+            
+        }
+    }
+
+
+
+IEnumerator SpeedPowerDown()
+    {
+        yield return new WaitForSeconds(3f);
+        playerSpeed = 5f;
+        thrusterPrefab.SetActive(false);
+        gameManager.ManagePowerupText(0);
+        gameManager.PlaySound(2);
+    }
+
+    IEnumerator WeaponPowerDown()
+    {
+        yield return new WaitForSeconds(3f);
+        weaponType = 1;
+        gameManager.ManagePowerupText(0);
+        gameManager.PlaySound(2);
+    }
+
+
+
+ private void OnTriggerEnter2D(Collider2D whatDidIHit)
+    {
+        if(whatDidIHit.tag == "Powerup")
+        {
+            Destroy(whatDidIHit.gameObject);
+            int whichPowerup = Random.Range(1, 5);
+            gameManager.PlaySound(1);
+            switch (whichPowerup)
+            {
+                case 1:
+                    //Picked up speed
+                    playerSpeed = 10f;
+                    StartCoroutine(SpeedPowerDown());
+                    thrusterPrefab.SetActive(true);
+                    gameManager.ManagePowerupText(1);
+                    break;
+                case 2:
+                    weaponType = 2; //Picked up double weapon
+                    StartCoroutine(WeaponPowerDown());
+                    gameManager.ManagePowerupText(2);
+                    break;
+                case 3:
+                    weaponType = 3; //Picked up triple weapon
+                    StartCoroutine(WeaponPowerDown());
+                    gameManager.ManagePowerupText(3);
+                    break;
+                case 4:
+                    //Picked up shield
+                    //Do I already have a shield?
+                    //If yes: do nothing
+                    //If not: activate the shield's visibility
+                    gameManager.ManagePowerupText(4);
+                    break;
+            }
+        }
+    }
+    
+  
+
+   
 
     //void = output 
     void Movement()

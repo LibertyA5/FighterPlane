@@ -4,10 +4,12 @@ public class Enemy : MonoBehaviour
 {
 
     public GameObject explosionPrefab;
+
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
-
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -15,7 +17,7 @@ public class Enemy : MonoBehaviour
     {
         //neg 1 moves down 
         //if less than neg 6.5, destroy themselves 
-        transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * 3f);
+        transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * 1.5f);
         if (transform.position.y < -6.5f)
         {
             Destroy(this.gameObject);
@@ -37,6 +39,7 @@ public class Enemy : MonoBehaviour
             Destroy(whatDidIHit.gameObject);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+            gameManager.AddScore(5);
 
         }
     }
