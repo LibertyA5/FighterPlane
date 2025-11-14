@@ -412,8 +412,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba036ee48e5944ba7d0f7cafa0f5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  playerPrefab: {fileID: 0}
   enemyOnePrefab: {fileID: 826472680687608151, guid: d1e0cab7b100e824393e9ed62605ba6a, type: 3}
   enemyTwoPrefab: {fileID: 826472680687608151, guid: 484d49a884e6e1e459a735db09f92935, type: 3}
+  cloudPrefab: {fileID: 0}
+  restartText: {fileID: 0}
+  gameOverText: {fileID: 0}
+  powerupPrefab: {fileID: 0}
+  audioPlayer: {fileID: 0}
+  powerUpSound: {fileID: 0}
+  powerDownSound: {fileID: 0}
+  livesText: {fileID: 0}
+  scoreText: {fileID: 0}
+  powerupText: {fileID: 0}
+  score: 0
+  horizontalScreenSize: 0
+  verticalScreenSize: 0
+  cloudMove: 0
 --- !u!4 &794013888
 Transform:
   m_ObjectHideFlags: 0
@@ -510,8 +525,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a128fef3ca02cc4fb025e899084716a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::player
+  lives: 0
   bulletPrefab: {fileID: 428977281536425508, guid: 68c36c99feb826543878b5ff1768d0de, type: 3}
   explosionPrefab: {fileID: 3679228904311652738, guid: 82d305b195f80ac45aa8aa1447561bf3, type: 3}
+  thrusterPrefab: {fileID: 0}
+  shieldPrefab: {fileID: 0}
+  powerupText: {fileID: 0}
 --- !u!65 &953756678
 BoxCollider:
   m_ObjectHideFlags: 0

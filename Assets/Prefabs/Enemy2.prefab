@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 431126934421960567}
   - component: {fileID: 7612305560191380073}
   - component: {fileID: 2057696144025440788}
-  - component: {fileID: -27183256064179937}
   - component: {fileID: 3291966946946858544}
   - component: {fileID: 5863476010469662501}
-  - component: {fileID: 3542493435489011962}
+  - component: {fileID: -4399050024565250426}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9446301, y: 1.7, z: 0.6725219}
+  m_LocalScale: {x: 2.721005, y: 0.689503, z: 0.6725219}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,19 +92,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-27183256064179937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826472680687608151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3c96875ddc396449802bb6c77cca2ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  explosionPrefab: {fileID: 3679228904311652738, guid: 82d305b195f80ac45aa8aa1447561bf3, type: 3}
 --- !u!61 &3291966946946858544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -179,7 +165,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3542493435489011962
+--- !u!114 &-4399050024565250426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,7 +174,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 826472680687608151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3c96875ddc396449802bb6c77cca2ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 0abe0bf7995ea8f4aa9a6dcb643d8a68, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy2
   explosionPrefab: {fileID: 3679228904311652738, guid: 82d305b195f80ac45aa8aa1447561bf3, type: 3}
