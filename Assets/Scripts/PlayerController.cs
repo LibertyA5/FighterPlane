@@ -133,6 +133,13 @@ IEnumerator SpeedPowerDown()
                     break;
             }
         }
+
+         if(whatDidIHit.tag == "Coin")
+        {
+            Destroy(whatDidIHit.gameObject);
+            gameManager.PlaySound(1);
+            gameManager.AddScore(1);
+    }
     }
     
   

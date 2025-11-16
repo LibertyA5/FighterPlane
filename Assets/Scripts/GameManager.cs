@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public AudioClip powerUpSound;
     public AudioClip powerDownSound;
 
+
     public GameObject coinPrefab;
 
 
@@ -130,10 +131,9 @@ void CreatePowerup()
         StartCoroutine(SpawnPowerup());
     }
 
-public void PlaySound (int soundType)
     IEnumerator SpawnCoin()
     {
-        float spawnTime = Random.Range(4, 8);
+        float spawnTime = Random.Range(2, 6);
         yield return new WaitForSeconds(spawnTime);
         CreateCoin();
         StartCoroutine(SpawnCoin());
