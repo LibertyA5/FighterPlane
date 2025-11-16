@@ -830,6 +830,7 @@ MonoBehaviour:
   audioPlayer: {fileID: 905566003}
   powerUpSound: {fileID: 8300000, guid: a837aeba4c6e7ed43a1ebcc72cc0c976, type: 3}
   powerDownSound: {fileID: 8300000, guid: 7f1f9787b1d738d40bece61d30af037e, type: 3}
+  coinPrefab: {fileID: 2245838223533919487, guid: 5bb2a3ad2d7ea724b8d3198f6b1f42d9, type: 3}
   livesText: {fileID: 1821612444}
   scoreText: {fileID: 471525551}
   powerupText: {fileID: 786649811}

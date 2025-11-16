@@ -18,8 +18,12 @@ public class GameManager : MonoBehaviour
     public GameObject powerupPrefab;
     public GameObject audioPlayer;
 
+    
     public AudioClip powerUpSound;
     public AudioClip powerDownSound;
+
+
+    public GameObject coinPrefab;
 
 
 
@@ -57,6 +61,7 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("CreateEnemyTwo", 3, 3);
         StartCoroutine(SpawnPowerup());
         powerupText.text = "No powerups yet!";
+        StartCoroutine(SpawnCoin());
     }
  
     // Update is called once per frame
@@ -126,7 +131,20 @@ void CreatePowerup()
         StartCoroutine(SpawnPowerup());
     }
 
-public void PlaySound (int soundType)
+    IEnumerator SpawnCoin()
+    {
+        float spawnTime = Random.Range(2, 6);
+        yield return new WaitForSeconds(spawnTime);
+        CreateCoin();
+        StartCoroutine(SpawnCoin());
+    }
+
+    void CreateCoin()
+    {
+        Instantiate(coinPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.6f, horizontalScreenSize * 0.6f), Random.Range(-verticalScreenSize * 0.6f, verticalScreenSize * 0.6f), 0), Quaternion.identity);
+    }
+
+    public void PlaySound (int soundType)
 {
     AudioSource audioSource = audioPlayer.GetComponent<AudioSource>();
 switch (soundType)
