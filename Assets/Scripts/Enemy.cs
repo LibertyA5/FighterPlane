@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             gameManager.AddScore(5);
+            gameManager.PlaySound(4);
 
         }
     }

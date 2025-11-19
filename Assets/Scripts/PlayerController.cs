@@ -81,7 +81,7 @@ void Update()
 
 IEnumerator SpeedPowerDown()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
         playerSpeed = 5f;
         thrusterPrefab.SetActive(false);
         gameManager.ManagePowerupText(0);
@@ -90,7 +90,7 @@ IEnumerator SpeedPowerDown()
 
     IEnumerator WeaponPowerDown()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
         weaponType = 1;
         gameManager.ManagePowerupText(0);
         gameManager.PlaySound(2);
@@ -137,7 +137,7 @@ IEnumerator SpeedPowerDown()
          if(whatDidIHit.tag == "Coin")
         {
             Destroy(whatDidIHit.gameObject);
-            gameManager.PlaySound(1);
+            gameManager.PlaySound(3);
             gameManager.AddScore(1);
     }
     }
@@ -185,6 +185,7 @@ IEnumerator SpeedPowerDown()
         {
             Debug.Log("Pew Pew" + horizontalInput);
             Instantiate(bulletPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            
         }
     } 
 

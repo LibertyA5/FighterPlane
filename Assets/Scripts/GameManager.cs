@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject coinPrefab;
 
+    public AudioClip coinSound;
+    public AudioClip explodeSound;
+
 
 
     public TextMeshProUGUI livesText;
@@ -155,6 +158,15 @@ switch (soundType)
             case 2:
                 audioPlayer.GetComponent<AudioSource>().PlayOneShot(powerDownSound);
                 break;
+                
+            case 3: // New case for coin sound
+            audioPlayer.GetComponent<AudioSource>().PlayOneShot(coinSound);
+            break;
+
+            case 4: // New case for explosion
+            audioPlayer.GetComponent<AudioSource>().PlayOneShot(explodeSound);
+            break;
+
 }
 
 }
