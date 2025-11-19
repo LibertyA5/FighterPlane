@@ -1,2 +1,16 @@
 fileFormatVersion: 2
 guid: 3a128fef3ca02cc4fb025e899084716a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bulletPrefab: {instanceID: 0}
+  - explosionPrefab: {instanceID: 0}
+  - thrusterPrefab: {instanceID: 0}
+  - shieldPrefab: {fileID: 3821734633333376799, guid: 9ab9042de9bb05a40926a024ae3c9576, type: 3}
+  - powerupText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

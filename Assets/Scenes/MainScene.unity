@@ -177,7 +177,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -831,6 +831,8 @@ MonoBehaviour:
   powerUpSound: {fileID: 8300000, guid: a837aeba4c6e7ed43a1ebcc72cc0c976, type: 3}
   powerDownSound: {fileID: 8300000, guid: 7f1f9787b1d738d40bece61d30af037e, type: 3}
   coinPrefab: {fileID: 2245838223533919487, guid: 5bb2a3ad2d7ea724b8d3198f6b1f42d9, type: 3}
+  shieldPrefab: {fileID: 3821734633333376799, guid: 9ab9042de9bb05a40926a024ae3c9576, type: 3}
+  thrusterPrefab: {fileID: 3821734633333376799, guid: 1d66129f7e170bd40bf34b0c8ea53abe, type: 3}
   coinSound: {fileID: 8300000, guid: 697bf9cd87debd74d89f6c0fb7d6bdb4, type: 3}
   explodeSound: {fileID: 8300000, guid: e30aa730cdbc69d4683d8ee020bc9534, type: 3}
   livesText: {fileID: 1821612444}
@@ -1085,7 +1087,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.86
   m_Pitch: 1
   Loop: 0
   Mute: 0

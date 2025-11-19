@@ -43,6 +43,15 @@ public class Enemy : MonoBehaviour
             gameManager.PlaySound(4);
 
         }
+
+        else if (whatDidIHit.tag == "Shield")
+        {
+            Destroy(whatDidIHit.gameObject);
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            gameManager.AddScore(5);
+            //**gameManager.PlaySound(4); add shield sound later?
+        }
     }
 
 

@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
 
 
     public GameObject coinPrefab;
+    public GameObject shieldPrefab;
+
+    public GameObject thrusterPrefab;
 
     public AudioClip coinSound;
     public AudioClip explodeSound;
@@ -176,7 +179,7 @@ switch (soundType)
     public void AddScore(int earnedScore)
     {
         score += earnedScore;
-        scoreText.text = "Score" + score;
+        scoreText.text = "Score: " + score;
 
 
     }
