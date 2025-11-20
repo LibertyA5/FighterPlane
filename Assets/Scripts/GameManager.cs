@@ -124,7 +124,7 @@ void CreatePowerup()
                 powerupText.text = "Shield!";
                 break;
             default:
-                powerupText.text = "No powerups yet!";
+                powerupText.text = "No Powerups yet!";
                 break;
         }
     }
