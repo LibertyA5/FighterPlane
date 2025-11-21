@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public AudioClip coinSound;
     public AudioClip explodeSound;
+    public AudioClip shieldSound;
 
 
 
@@ -131,7 +132,7 @@ void CreatePowerup()
 
   IEnumerator SpawnPowerup()
     {
-        float spawnTime = Random.Range(3, 5); 
+        float spawnTime = Random.Range(5, 8); 
         yield return new WaitForSeconds(spawnTime);
         CreatePowerup();
         StartCoroutine(SpawnPowerup());
@@ -169,6 +170,10 @@ switch (soundType)
             case 4: // New case for explosion
             audioPlayer.GetComponent<AudioSource>().PlayOneShot(explodeSound);
             break;
+
+            case 5: // New case for Shield
+                audioPlayer.GetComponent<AudioSource>().PlayOneShot(shieldSound);
+                break;
 
 }
 

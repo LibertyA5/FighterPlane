@@ -49,7 +49,7 @@ public class Enemy2 : MonoBehaviour
             Destroy(whatDidIHit.gameObject);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-            //**gameManager.PlaySound(4); add shield sound later?
+            gameManager.PlaySound(5);
         }
 
     }
