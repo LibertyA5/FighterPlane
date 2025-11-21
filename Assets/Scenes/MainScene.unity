@@ -835,6 +835,7 @@ MonoBehaviour:
   thrusterPrefab: {fileID: 3821734633333376799, guid: 1d66129f7e170bd40bf34b0c8ea53abe, type: 3}
   coinSound: {fileID: 8300000, guid: 697bf9cd87debd74d89f6c0fb7d6bdb4, type: 3}
   explodeSound: {fileID: 8300000, guid: e30aa730cdbc69d4683d8ee020bc9534, type: 3}
+  shieldSound: {fileID: 8300000, guid: 00f81c757519c1b42a1ffb9d8bc2b62e, type: 3}
   livesText: {fileID: 1821612444}
   scoreText: {fileID: 471525551}
   powerupText: {fileID: 786649811}
