@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     public AudioClip explodeSound;
     public AudioClip shieldSound;
 
+    private float horizontalScreenLimit = 9.5f;
+    private float verticalScreenLimit = 6.5f;
 
 
     public TextMeshProUGUI livesText;
@@ -96,7 +98,7 @@ public class GameManager : MonoBehaviour
 
 void CreatePowerup()
 {
-        Instantiate(powerupPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.6f, horizontalScreenSize * 0.6f), Random.Range(-verticalScreenSize * 0.6f, verticalScreenSize * 0.6f), 0), Quaternion.identity);
+        Instantiate(powerupPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.6f, horizontalScreenSize * 0.6f), Random.Range(-verticalScreenSize * 0.2f, verticalScreenSize * 0.1f), 0), Quaternion.identity);
     }
 
  void CreateSky()
@@ -149,7 +151,7 @@ void CreatePowerup()
 
     void CreateCoin()
     {
-        Instantiate(coinPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.6f, horizontalScreenSize * 0.6f), Random.Range(-verticalScreenSize * 0.6f, verticalScreenSize * 0.6f), 0), Quaternion.identity);
+        Instantiate(coinPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.6f, horizontalScreenSize * 0.6f), Random.Range(-verticalScreenSize * 0.2f, verticalScreenSize * 0.1f), 0), Quaternion.identity);
     }
 
     public void PlaySound (int soundType)
