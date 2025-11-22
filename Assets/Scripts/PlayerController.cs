@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     public GameObject shieldPrefab;
     private GameObject shieldInstance;
 
+    private GameObject thrusterInstance;
+
+
     public TextMeshProUGUI powerupText;
 
     void Start()
@@ -42,6 +45,7 @@ public class PlayerController : MonoBehaviour
         Movement();
         Shooting();
     }
+
 
     public void LoseALife()
     {
@@ -67,7 +71,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(6f);
         playerSpeed = 5f;
-        thrusterPrefab.SetActive(false);
         gameManager.ManagePowerupText(0);
         gameManager.PlaySound(2);
     }
@@ -91,6 +94,17 @@ public class PlayerController : MonoBehaviour
         gameManager.PlaySound(2);
     }
 
+     IEnumerator ThrusterPowerDown()
+    {
+        yield return new WaitForSeconds(6f);
+        if (thrusterInstance != null)
+        {
+            thrusterInstance.SetActive(false);
+        }
+        gameManager.ManagePowerupText(0);
+        gameManager.PlaySound(2);
+    }
+
     private void ActivateShield()
     {
         if (shieldInstance == null)
@@ -101,6 +115,19 @@ public class PlayerController : MonoBehaviour
         }
         shieldInstance.SetActive(true);
         StartCoroutine(ShieldPowerDown());
+    }
+
+
+     private void ActivateThruster()
+    {
+        if (thrusterInstance == null)
+        {
+            thrusterInstance = Instantiate(thrusterPrefab, transform.position, Quaternion.identity);
+            thrusterInstance.transform.SetParent(transform);
+            thrusterInstance.transform.localPosition = Vector3.zero;
+        }
+        thrusterInstance.SetActive(true);
+        StartCoroutine(ThrusterPowerDown());
     }
 
     private void OnTriggerEnter2D(Collider2D whatDidIHit)
@@ -114,8 +141,9 @@ public class PlayerController : MonoBehaviour
             {
                 case 1:
                     playerSpeed = 10f;
+                    Debug.Log("Speed activated");
                     StartCoroutine(SpeedPowerDown());
-                    thrusterPrefab.SetActive(true);
+                    ActivateThruster();
                     gameManager.ManagePowerupText(1);
                     break;
                 case 2:
@@ -171,4 +199,4 @@ public class PlayerController : MonoBehaviour
             Instantiate(bulletPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         }
     }
-}
+    }

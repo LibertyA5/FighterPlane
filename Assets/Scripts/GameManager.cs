@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("CreateEnemyOne", 1, 2); //takes method, waits 1 sec before doing every 2 seconds, simple repetition, at start, very exact 
         InvokeRepeating("CreateEnemyTwo", 3, 3);
         StartCoroutine(SpawnPowerup());
-        powerupText.text = "No powerups yet!";
+        powerupText.text = "No Powerups Yet!";
         StartCoroutine(SpawnCoin());
     }
  
@@ -145,6 +145,7 @@ void CreatePowerup()
         CreateCoin();
         StartCoroutine(SpawnCoin());
     }
+
 
     void CreateCoin()
     {
